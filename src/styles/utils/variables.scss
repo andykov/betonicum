@@ -1,0 +1,73 @@
+// Mobile first
+$mediaWidthMobile: 320px;
+$mediaWidthTablet: 768px;
+$mediaWidthTabletHorizontal: 1024px;
+$mediaWidthLaptop: 1366px;
+
+// Цвета
+$white: white;
+$red: #C62828;
+$gray: #616161;
+$dark-blue: #283544;
+
+$text-color: #212121;
+$text-gray: $gray;
+$body-bg: #FAFAFA;
+
+$link-color: $text-color;
+$link-color--hover: darken($text-color, 15%);
+
+// Базовая типографика
+$font-size-sm: 14px !default;
+$font-size: 16px !default;
+$font-size-md: 36px !default;
+
+
+$font-size-h1: 58px;
+$font-size-h2: 28px;
+$font-size-h3: 16px;
+// $font-size-h4:                18px;
+// $font-size-h5:                16px;
+// $font-size-h6:                16px;
+
+$font-size-h1-mobile: 58px;
+$font-size-h2-mobile: 20px;
+$font-size-h3-mobile: 16px;
+
+$line-height: (24 / 16);
+
+$typo-margin-vertical: 1em;
+
+$font-family: /*-apple-system, BlinkMacSystemFont,*/ 'Roboto', 'Ubuntu', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+$font-family--monospace: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+
+$font-thin: 100 !default;
+$font-light: 300 !default;
+$font-normal: 400 !default;
+$font-medium: 500 !default;
+$font-bold: 700 !default;
+$font-extrabold: 900 !default;
+
+$screen-xs: 0 !default;
+$screen-sm: 480px !default;
+$screen-md: 768px !default;
+$screen-lg: 992px !default;
+$screen-xl: 1200px !default;
+// $screen-xxl: 1800px !default;
+
+$grid-columns: 12 !default;
+$grid-gutter-width: 40px !default;
+$grid-gutter-width-mobile: 20px !default;
+
+$container-sm: 100% !default;
+$container-md: 100% !default;
+$container-lg: ($screen-lg + $grid-gutter-width) !default;
+$container-xl: ($screen-xl + $grid-gutter-width) !default;
+// $container-xxl: ($screen-xxl - $grid-gutter-width) !default;
+
+// Разное
+$opacity: 0.7;
+$border-radius: 2px;
+$transition-time: 0.3s;
+
+

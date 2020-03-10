@@ -1,0 +1,70 @@
+include mixins.pug
+doctype html
+html(lang="ru")
+  block head
+    head
+      meta(charset="utf-8")
+      title Page Title
+      meta(content="width=device-width, initial-scale=1" name="viewport")
+      meta(content="ie=edge" http-equiv="x-ua-compatible")
+      link(rel="stylesheet" href="css/style.css")
+    body
+      |<!-- load combined svg file (with symbols) into body-->
+      |<script>
+      |    (function (doc) {
+      |    var scripts = doc.getElementsByTagName('script')
+      |    var script = scripts[scripts.length - 1]
+      |    var xhr = new XMLHttpRequest()
+      |    console.log(xhr);
+      |    xhr.onload = function () {
+      |        var div = doc.createElement('div')
+      |        div.innerHTML = this.responseText
+      |        div.style.display = 'none'
+      |        script.parentNode.insertBefore(div, script)
+      |    }
+      |    xhr.open('get', 'img/sprite.svg', true)
+      |    xhr.send()
+      |    })(document)
+      |</script>
+
+      block header
+      block content
+      block footer
+        include footer
+
+        .js-modal-backdoor.modal-backdoor
+
+        #modal-image.js-modal.js-modal-scroll.modal
+          .modal__container
+            .modal__content
+              .photo-view
+                img(src="/", alt="")
+            button.js-close-modal.modal__close Close modal
+
+        #modal-video.js-modal.js-modal-scroll.modal
+          .modal__container
+            .modal__content
+              .photo-view
+                img(src="/", alt="")
+            button.js-close-modal.modal__close Close modal
+
+        #modal-form.js-modal.js-modal-scroll.modal
+          .modal__container
+            .modal__content
+              .modal-form
+                .modal-form__text
+                  p Получите индивидуальные условия работы и скидки до 50% прямо сейчас
+                form.form
+                  .form__field
+                    input(type="text", name="user_name" placeholder="Ваше имя")
+                  .form__field
+                    input(type="tel", name="user_phone" placeholder="Телефон")
+                  .form__button
+                    button(type="submit") Заказать обратный звонок
+            button.js-close-modal.modal__close Close modal
+      block scripts
+        // Scripts
+        //- script(src="js/libs/scroll-lock.min.js")
+        //- script(src='js/main.min.js')
+        script(src="http://code.jquery.com/jquery-3.3.1.min.js")
+        script(src='js/bundle.min.js')

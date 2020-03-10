@@ -1,0 +1,456 @@
+@import "../../local_modules/normalize.css/normalize";
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+// Я люблю Сафари (на самом деле, нет).
+[type='search']::-webkit-search-decoration {
+    -webkit-appearance: none; // stylelint-disable-line
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $body-bg;
+    margin: 0;
+    font-family: $font-family;
+    font-size: $font-size;
+    font-weight: $font-normal;
+    line-height: $line-height;
+    color: $text-color;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+a {
+    color: $link-color;
+    background-color: transparent;
+    transition: color 0.3s;
+
+    &:hover,
+    &:focus {
+      color: $link-color--hover;
+    }
+
+    // &:visited {
+    //   color: $link-color--hover;
+    // }
+
+    &[href^='tel:'] {
+
+        // На больших экранах телефоны-ссылки делаем обычным текстом
+        @media (min-width: $screen-xl) {
+            white-space: nowrap;
+            pointer-events: none;
+            text-decoration: inherit;
+            color: inherit;
+        }
+    }
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    font-weight: $font-bold;
+    // line-height: 1.17;
+}
+
+h1 {
+    font-size: $font-size-h1;
+    line-height: 1.17;
+}
+
+h2 {
+    font-size: $font-size-h2-mobile;
+    text-transform: uppercase;
+    line-height: (28 / 20);
+
+    @media (min-width: $screen-sm) {
+        font-size: $font-size-h2;
+        line-height: 1.17;
+    }
+}
+
+h3 {
+    font-size: $font-size-h3;
+    line-height: 1.17;
+}
+
+a,
+button,
+[role='button'],
+input,
+label,
+select,
+textarea {
+    touch-action: manipulation; // Стилевая коррекция 300ms задержки (для поддерживающих браузеров)
+    margin: 0;                  // Убираем margin в Firefox и Safari
+}
+
+// Коррекция проблем стилизации для Safari
+button,
+html [type='button'],
+[type='reset'],
+[type='submit'] {
+    -webkit-appearance: button; // stylelint-disable-line
+}
+
+button::-moz-focus-inner,
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
+    padding: 0;
+    border-style: none;
+}
+
+// Коррекция для Mobile Safari (https://github.com/twbs/bootstrap/issues/11266)
+input[type='date'],
+input[type='time'],
+input[type='datetime-local'],
+input[type='month'] {
+    -webkit-appearance: listbox; // stylelint-disable-line
+}
+
+textarea {
+    overflow: auto;   // Удаление верт. скролла в IE.
+    resize: vertical;
+}
+
+svg {
+    fill: currentColor;
+
+    a &,
+    button & {
+        pointer-events: none; // Я люблю Edge, это браузер! (почти)
+    }
+
+    &:not(:root) {
+        overflow: hidden;
+    }
+}
+
+.content {
+    p {
+        margin-bottom: 24px;
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.section {
+    padding-bottom: 114px;
+
+    &--bg-white {
+        background-color: #FFF;
+    }
+
+    &__head {
+        text-align: center;
+        padding-top: 114px;
+        margin-bottom: 57px;
+
+        &--nav {
+            position: relative;
+        }
+    }
+
+    &__title {
+        // padding-bottom: 30px;
+        display: flex;
+        align-items: center;
+
+        &--divider {
+            flex-direction: column;
+            
+            &:after {
+                content: '';
+                width: 40px;
+                height: 3px;
+                background-color: #C62828;
+                margin-top: 30px;
+            }
+        }
+    }
+
+    &__subtitle {
+        color: $text-gray;
+        font-size: $font-size-sm;
+        line-height: (15 / 13);
+    }
+}
+
+.container {
+  @include container()
+}
+
+.columns {
+  @include row( $grid-gutter-width-mobile, $grid-gutter-width-mobile );
+
+  &--centered {
+    justify-content: center;
+  }
+
+  &--gapless {
+    margin-left: 0;
+    margin-right: 0;
+
+    & > [class*=columns] {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    &-xs {
+      @media (max-width: $screen-sm - 1) {
+        margin-left: 0;
+        margin-right: 0;
+
+        & > [class*=columns] {
+            padding-left: 0;
+            padding-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.columns__col { @include col(); }
+
+@for $i from 1 through $grid-columns {
+    .columns__col-xs-#{$i} { @include col('xs', $i, $gutter: $grid-gutter-width-mobile); }
+}
+@for $i from 1 through $grid-columns {
+    .columns__col-sm-#{$i} { @include col('sm', $i); }
+}
+@for $i from 1 through $grid-columns {
+    .columns__col-md-#{$i} { @include col('md', $i); }
+}
+@for $i from 1 through $grid-columns {
+    .columns__col-lg-#{$i} { @include col('lg', $i); }
+}
+
+.columns__order-md-1 {
+    @media (min-width: $screen-md) {
+        order: 1;
+    }
+}
+
+.align-center {
+    text-align: center;
+}
+
+.marked-list {
+    list-style: none;
+    margin: 5px 0 24px;
+
+    @media (min-width: $screen-md) {
+        margin-top: 27px;
+    }
+
+    li::before {
+        content: "\2022";
+        color: red;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1;
+        display: inline-block;
+        vertical-align: middle;
+        width: 0.8em;
+        margin-left: -0.8em;
+    }
+}
+
+
+.icon-svg {
+    vertical-align: middle;
+}
+
+.logo {
+    svg {
+        use {
+            color: #7C4345;
+        }
+    }
+}
+
+.phone {
+    display: inline-block;
+}
+
+.block-floating {
+    position: relative;
+
+    &__inner {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+        transform: translateY(-50%);
+    }
+}
+
+.is-hidden-xs {
+    @media (max-width: $screen-sm - 1) {
+        display: none !important;
+    }
+}
+
+.is-hidden-sm {
+    @media (max-width: $screen-md - 1) {
+        display: none !important;
+    }
+}
+
+.pb-0 {
+    padding-bottom: 0;
+}
+
+.form-box {
+    padding: 35px 40px 40px;
+    background: #FFFFFF;
+    box-shadow: 0px 14px 42px rgba(45, 48, 58, 0.12);
+    border-radius: 7px;
+}
+
+.check-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    height: 100%;
+
+    li {
+        background: url('../img/check.svg') no-repeat left 9px;
+        padding: 9px 0 9px 42px;
+    }
+}
+
+.font-bold {
+    font-weight: $font-bold;
+}
+
+.requisites {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+        padding: 4.2px 0;
+    }
+    
+    span {
+        font-weight: $font-bold;
+        max-width: 225px;
+        width: 100%;
+        display: inline-block;
+        margin-right: 7%;
+    }
+}
+
+.sert {
+    margin-bottom: 28px;
+
+    @media (min-width: $screen-md) {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 60px;
+    }
+
+    &__text {
+        flex: 1;
+
+        @media (min-width: $screen-md) {
+            padding-left: $grid-gutter-width;
+        }
+    }
+
+    &__img {
+        @media (max-width: $screen-md - 1) {
+            margin-bottom: 15px;
+        }
+    }
+
+    &__name {
+        font-weight: $font-bold;
+        margin-bottom: 18px;
+
+        @media (min-width: $screen-md) {
+            font-size: 18px;
+            font-weight: $font-normal;
+        }
+    }
+
+    &__info {
+        font-size: $font-size-sm;
+        color: #616161;
+
+        @media (max-width: $screen-md - 1) {
+            display: none;
+        }
+    }
+}
+
+.product {
+    text-align: center;
+    padding-bottom: 114px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+    &__name {
+        margin-bottom: 10px;
+    }
+
+    &__desc {
+        font-size: $font-size-sm;
+        margin-bottom: 27px;
+        min-height: 63px;
+    }
+
+    &__img {
+        margin-bottom: 27px;
+    }
+
+    &__link {
+        
+    }
+}
+
+.product-detail {
+    text-align: center;
+
+    &__left,
+    &__right {
+        display: inline-block;
+        position: absolute;
+        font-size: 18px;
+        font-weight: $font-bold;
+        line-height: (21 / 18);
+        color: #A6ADB8;
+        text-decoration: none;
+    }
+
+    &__left {
+        left: 0;
+        padding-left: 58px;
+        background: url('../img/arrow-left.svg') no-repeat left center;
+    }
+    &__right {
+        right: 0;
+        padding-right: 58px;
+        background: url('../img/arrow-right.svg') no-repeat right center;
+    }
+
+    &__img {
+        display: inline-block;
+        padding-top: 38px;
+    }
+}

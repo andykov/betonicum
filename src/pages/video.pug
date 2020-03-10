@@ -1,0 +1,19 @@
+extends common/layout
+
+block header
+  +headerIndex(false)
+
+block content
+  main.main
+    section.section
+      .container
+        +section-head(
+          'Видео',
+          '000'
+        )
+    +call-to-action(
+      'Получите индивидуальные условия работы с нами',
+      'Скидки до 50% прямо сейчас',
+      'Заказать обратный звонок'
+    )
+          

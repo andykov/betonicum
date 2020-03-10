@@ -1,0 +1,95 @@
+extends common/layout
+
+block header
+  +headerIndex(false)
+
+block content
+  main.main
+    section.section
+      .container
+        +section-head(
+          'Проектировщикам',
+          'Любая помощь в проектировании объекта, авторский надзор при строительстве'
+        )
+        .columns
+          .columns__col-md-4
+            .icon-box
+              .icon-box__img
+                +svg-icon('icon_10', '48', '48')
+              .icon-box__title Агентский договор
+          .columns__col-md-4
+            .icon-box
+              .icon-box__img
+                +svg-icon('icon_11', '48', '48')
+              .icon-box__title Помощь в проектировании и выборе покрытия
+          .columns__col-md-4
+            .icon-box
+              .icon-box__img
+                +svg-icon('icon_12', '39', '48')
+              .icon-box__title Индивидуальный расчёт стоимости
+        
+        +section-head(
+          'Подрядчикам',
+          'Себестоимость материалов в среднем на 50% ниже, чем у европейских аналогов'
+        )
+        .columns
+          .columns__col-md-4
+            .icon-box
+              .icon-box__img
+                +svg-icon('icon_13', '48', '48')
+              .icon-box__title Особые условия сотрудничества
+          .columns__col-md-4
+            .icon-box
+              .icon-box__img
+                +svg-icon('icon_14', '48', '48')
+              .icon-box__title Шеф-монтаж и техподдержка
+          .columns__col-md-4
+            .icon-box
+              .icon-box__img
+                +svg-icon('icon_15', '48', '48')
+              .icon-box__title Быстрая поставка материалов
+
+    section.section.section--bg-white
+      .container
+        +section-head(
+          'Альбом технических решений',
+          'Проектирование и устройство промышленных и декоративных <br> бетонных полов с покрытиями Resalux'
+        )
+        
+        .columns
+          .columns__col-xs-12.columns__col-md-8
+            ul.columns.check-list
+              li.columns__col-md-6 Общие требования по проектированию полов
+              li.columns__col-md-6 Рекомендации по выбору покрытий
+              li.columns__col-md-6 Описание основных технологий устройства полов
+              li.columns__col-md-6 Информацию о химической стойкости покрытий
+              li.columns__col-md-6 Технические описания систем покрытий и материалов
+              li.columns__col-md-6 Чертежи типовых узлов
+          .columns__col-xs-12.columns__col-md-4
+            .form-box
+              .form-box__text Техническая документация, материалы и типовые решения
+              form.form
+                .form__field
+                  input(type="text", name="user_name" placeholder="Ваше имя")
+                .form__field
+                  input(type="tel", name="user_phone" placeholder="Телефон")
+                .form__button
+                  button(type="submit") Заказать обратный звонок
+
+    section.section
+      .container
+        +section-head(
+          'Порядок работы',
+          '000'
+        )
+        +section-head(
+          'FAQ',
+          'Ваши вопросы, наши ответы'
+        )
+
+    +call-to-action(
+      'Получите индивидуальные условия работы с нами',
+      'Скидки до 50% прямо сейчас',
+      'Заказать обратный звонок'
+    )
+          

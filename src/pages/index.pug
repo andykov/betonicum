@@ -1,0 +1,146 @@
+extends common/layout
+
+block header
+  .hero
+    .hero__inner
+      +headerIndex(true)
+      .hero__cont
+        .container
+          h1.hero__title Полиуретан-цементные полы
+          .hero__subtitle получите готовый пол за 1 день #[br] из надежных и долговечных материалов #[br] гарантия 10 лет
+          button.btn.btn--red Рассчитать пол
+
+block content
+  main.main
+    
+    section.section
+      .container
+        .block-floating
+          .block-floating__inner
+            .columns.columns--gapless-xs
+              .columns__col-xs-4
+                .icon-box.icon-box--special.icon-box--centered
+                  .icon-box__img
+                    +svg-icon('advantages_5', '64', '64')
+                  .icon-box__title Пол за 1 день
+              .columns__col-xs-4
+                .icon-box.icon-box--special.icon-box--centered
+                  .icon-box__img
+                    +svg-icon('advantages_6', '64', '64')
+                  .icon-box__title 20 лет на рынке
+              .columns__col-xs-4
+                .icon-box.icon-box--special.icon-box--centered
+                  .icon-box__img
+                    +svg-icon('advantages_7', '64', '64')
+                  .icon-box__title 600 тонн в месяц
+      
+      +section-head(
+        'Почему «БЕТОНИКУМ»',
+        'Производство эпоксидных материалов и устройство промышленных полов'
+      )
+
+      include includes/index/whywe
+
+    section.section.section--bg-white
+      .container
+        +section-head(
+          'Как работают с RESALUX',
+          'Просто. Быстро. Надёжно.'
+        )
+
+        include common/media
+        .align-center
+          | Мы производим полиуретан-цементные полы Resalux.
+          a(href="#") Подробнее...
+
+    section.section
+      .container
+        +section-head(
+          'Выполненные объекты',
+          'C 2001 опыт работы с полиуретан-цементными материалами'
+        )
+
+    section.section.section--bg-white
+      .container
+        +section-head(
+          'Почему выбирают наш пол',
+          'В своей работе мы используем только импортное сырьё'
+        )
+
+        .columns.advantages
+          .columns__col-md-4
+            .icon-box
+              .icon-box__img
+                +svg-icon('icon_1', '48', '43')
+              .icon-box__title Срок службы более ХХ лет
+          .columns__col-md-4
+            .icon-box
+              .icon-box__img
+                +svg-icon('icon_2', '48', '48')
+              .icon-box__title Устойчив к резким перепадам температур
+          .columns__col-md-4
+            .icon-box
+              .icon-box__img
+                +svg-icon('icon_3', '48', '48')
+              .icon-box__title Соответствие санитарно-гигиеническим нормам
+          .columns__col-md-4
+            .icon-box
+              .icon-box__img
+                +svg-icon('icon_4', '48', '48')
+              .icon-box__title Устойчив к химическому воздействию
+          .columns__col-md-4
+            .icon-box
+              .icon-box__img
+                +svg-icon('icon_5', '48', '48')
+              .icon-box__title Устойчив к ударным нагрузкам
+          .columns__col-md-4
+            .icon-box
+              .icon-box__img
+                +svg-icon('icon_6', '35', '48')
+              .icon-box__title Высокая адгезия к основанию
+          .columns__col-md-4
+            .icon-box
+              .icon-box__img
+                +svg-icon('icon_7', '44', '48')
+              .icon-box__title Безвреден для человека и животных
+          .columns__col-md-4
+            .icon-box
+              .icon-box__img
+                +svg-icon('icon_8', '48', '48')
+              .icon-box__title Не накапливает статическое электричество
+          .columns__col-md-4
+            .icon-box
+              .icon-box__img
+                +svg-icon('icon_9', '48', '48')
+              .icon-box__title Обеспечивает гидроизоляционные свойства
+    
+    section.section
+      .container
+        +section-head(
+          'Благодарности наших клиентов',
+          'Нас рекомендуют ведущие эксперты'
+        )
+
+    +call-to-action(
+      '22333Начните решение задачи с консультации эксперта',
+      'Рассчитайте примерную стоимость решения прямо сейчас',
+      'Рассчитать стоимость'
+    )
+
+    section.section
+      .container
+        +section-head(
+          'FAQ',
+          'Ваши вопросы, наши ответы'
+        )
+    section.section.section--bg-white
+      .container
+        +section-head(
+          'ООО «БЕТОНИКУМ»',
+          'О нашей компании'
+        )
+        .content
+          p ООО «БЕТОНИКУМ» образовано в результате развития фирмы «Спецкомпозит». За прошедшие пятнадцать лет работы пройден большой путь, сначала в качестве подрядной организации, затем поставщика и специализированного укладчика ведущих европейских производителей полимерных полов.
+          p С самых первых лет работы наша компания специализируется на полиуретан-цементных полах, так как это самые прочные и надёжные покрытия, обладающие рядом уникальных свойств и выдерживающие целый комплекс тяжёлых нагрузок на промышленных предприятиях. Начиная с 2001г. наши специалисты имеют опыт работы со всеми ключевыми производителями полиуретан-цементных материалов.
+          p Закономерным следствием развития компании стали разработкии производство с помощью европейских специалистов полиуретан-цементных систем под собственной торговой маркой Resalux. За счёт налаженных прямых поставок от производителей сырья и грамотной логистики материалы Resalux на сегодняшний день имеют самые выгодные цены при неизменно высоком качестве. Полы Resalux производятся исключительно из высококачественных материалов от европейских поставщиков.
+          p От других производителей нас отличает тот факт, что будучи в течение пятнадцати лет подрядной организацией и обладая колоссальным практическим опытом, мы лучше остальных знаем какой результат ожидают наши клиенты и какие нюансы существуют на практике при укладке и дальнейшей эксплуатации покрытий.

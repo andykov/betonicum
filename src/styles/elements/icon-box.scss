@@ -1,0 +1,39 @@
+.icon-box {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    &--centered {
+        align-items: center;
+        text-align: center;
+    }
+
+    &--special {
+        background-color: #FFF;
+        border-bottom: 3px solid $red;
+        padding: 18px 21px 15px;
+        font-size: $font-size-sm;
+        font-weight: $font-bold;
+        line-height: (16 / 14);
+
+        @media (min-width: $screen-sm) {
+            
+        }
+
+        & > .icon-box__img {
+            margin-bottom: 9px;
+            
+            .icon-svg {
+                @media (max-width: $screen-sm - 1) {
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+        }
+    }
+
+    &__img {
+        margin-bottom: 17px;
+    }
+    
+}

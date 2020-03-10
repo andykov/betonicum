@@ -1,0 +1,137 @@
+extends common/layout
+
+block header
+  +headerIndex(false)
+
+block content
+  main.main
+    section.section.pb-0
+      .container
+        +section-head(
+          'Полиуретан-цементные полы RESALUX',
+          'Производство и продажа промышленных полов'
+        )
+        .columns
+          .columns__col-xs-6.columns__col-md-4
+            .product
+              h3.product__name Resalux TG
+              .product__desc Высоконаполненное полиуретан-цементное покрытие для тяжелых и сверхтяжелых режимов эксплуатации
+              .product__img
+                img(src="img/p-img-1.png", alt="")
+              .product__link
+                a.btn.btn--sm.btn--outline(href="product.html") Подробнее
+          .columns__col-xs-6.columns__col-md-4
+            .product
+              h3.product__name Resalux SL
+              .product__desc Наливное самовыравнивающее полиуретан-цементное покрытие для средних и тяжелых режимов эксплуатации
+              .product__img
+                img(src="img/p-img-2.png", alt="")
+              .product__link
+                a.btn.btn--sm.btn--outline(href="product.html") Подробнее
+          .columns__col-xs-6.columns__col-md-4
+            .product
+              h3.product__name Resalux RC
+              .product__desc Полиуретан-цементный состав для устройства плинтуса и отделки вертикальных поверхностей
+              .product__img
+                img(src="img/p-img-3.png", alt="")
+              .product__link
+                a.btn.btn--sm.btn--outline(href="product.html") Подробнее
+          .columns__col-xs-6.columns__col-md-4
+            .product
+              h3.product__name Resalux TG
+              .product__desc Высоконаполненное полиуретан-цементное покрытие для тяжелых и сверхтяжелых режимов эксплуатации
+              .product__img
+                img(src="img/p-img-4.png", alt="")
+              .product__link
+                a.btn.btn--sm.btn--outline(href="product.html") Подробнее
+          .columns__col-xs-6.columns__col-md-4
+            .product
+              h3.product__name Resalux SL
+              .product__desc Наливное самовыравнивающее полиуретан-цементное покрытие для средних и тяжелых режимов эксплуатации
+              .product__img
+                img(src="img/p-img-5.png", alt="")
+              .product__link
+                a.btn.btn--sm.btn--outline(href="product.html") Подробнее
+          .columns__col-xs-6.columns__col-md-4
+            .product
+              h3.product__name Resalux RC
+              .product__desc Полиуретан-цементный состав для устройства плинтуса и отделки вертикальных поверхностей
+              .product__img
+                img(src="img/p-img-1.png", alt="")
+              .product__link
+                a.btn.btn--sm.btn--outline(href="product.html") Подробнее
+          .columns__col-xs-6.columns__col-md-4
+            .product
+              h3.product__name Resalux TG
+              .product__desc Высоконаполненное полиуретан-цементное покрытие для тяжелых и сверхтяжелых режимов эксплуатации
+              .product__img
+                img(src="img/p-img-1.png", alt="")
+              .product__link
+                a.btn.btn--sm.btn--outline(href="product.html") Подробнее
+          .columns__col-xs-6.columns__col-md-4
+            .product
+              h3.product__name Resalux SL
+              .product__desc Наливное самовыравнивающее полиуретан-цементное покрытие для средних и тяжелых режимов эксплуатации
+              .product__img
+                img(src="img/p-img-4.png", alt="")
+              .product__link
+                a.btn.btn--sm.btn--outline(href="product.html") Подробнее
+          .columns__col-xs-6.columns__col-md-4
+            .product
+              h3.product__name Resalux RC
+              .product__desc Полиуретан-цементный состав для устройства плинтуса и отделки вертикальных поверхностей
+              .product__img
+                img(src="img/p-img-3.png", alt="")
+              .product__link
+                a.btn.btn--sm.btn--outline(href="product.html") Подробнее
+          .columns__col-xs-6.columns__col-md-4
+            .product
+              h3.product__name Resalux TG
+              .product__desc Высоконаполненное полиуретан-цементное покрытие для тяжелых и сверхтяжелых режимов эксплуатации
+              .product__img
+                img(src="img/p-img-2.png", alt="")
+              .product__link
+                a.btn.btn--sm.btn--outline(href="product.html") Подробнее
+    
+    section.section.section--bg-white
+      .container
+        +section-head(
+          'Устройство полиуретан-цементного пола',
+          'Рассчитайте примерную стоимость решения прямо сейчас'
+        )
+        
+        include common/media
+        .align-center
+          | Мы производим полиуретан-цементные полы Resalux.
+          a.btn.btn--sm.btn--outline(href="video.html") Все видео
+
+    section.section
+      .container
+        +section-head(
+          'Техническая информация',
+          'Рассчитайте примерную стоимость решения прямо сейчас'
+        )
+        .columns
+          .columns__col.columns__col-sm-4
+            h3 Подготовка основания
+            p Правильная подготовка поверхности — это самый важный этап укладки наливных полов.
+            a.btn(href="#") Подробнее
+          .columns__col.columns__col-sm-4
+            h3 Требования к основанию
+            p Качество бетонного основания – одно из основных условий долговечности уложенного на него полимерного покрытия.
+            a.btn(href="#") Подробнее
+          .columns__col.columns__col-sm-4
+            h3 Уход за полимерным полом
+            p Выбор способа ухода за полимерными полами зависит от типа уложенного покрытия и нагрузок, которым подвергается это покрытие.
+            a.btn(href="#") Подробнее
+        
+        +section-head(
+          'FAQ',
+          'Ваши вопросы, наши ответы'
+        )
+
+    +call-to-action(
+      'Получите индивидуальные условия работы с нами',
+      'Скидки до 50% прямо сейчас',
+      'Заказать обратный звонок'
+    )

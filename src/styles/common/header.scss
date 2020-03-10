@@ -1,0 +1,47 @@
+.header {
+
+    &--index {
+        .logo {
+            svg {
+                use {
+                    color: #FFF;
+                }
+            }
+        }
+    }
+
+    &:not(&--index) {
+        background-color: #FFF;
+    }
+
+    &__inner {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        height: 174px;
+    }
+
+    @include media-tablet {
+        // width: 500px;
+    }
+
+    &__panel {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        flex: 1;
+    }
+
+    &__nav {
+        margin-left: auto;
+    }
+
+    &__phone {
+        margin-left: auto;
+        font-size: 26px;
+        font-weight: $font-bold;
+        line-height: 30px;
+        color: #616161;
+    }
+}

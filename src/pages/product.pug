@@ -1,0 +1,103 @@
+extends common/layout
+
+block header
+  +headerIndex(false)
+
+block content
+  main.main
+    section.section
+      .container
+        .section__head.section__head--nav
+          h2.section__title.section__title--divider Промышленные полы RESALUX TG
+          p.section__subtitle Полиуретан-цементные полы Resalux
+          .product-detail
+            a.product-detail__left(href="/") Resalux RC
+            a.product-detail__right(href="/") Resalux SL
+            .product-detail__img
+              img(src="img/p-img-1.png", alt="")
+        .content
+          p Resalux TG – это прочное высоконаполненное нескользящее полиуретан-цементное покрытие для полов. Продукт разработан специально для обеспечения безопасности и чистоты полов. Соответствует требованиям гигиеничности.
+          p Resalux TG характеризуется абсолютной прочностью, благодаря исключительной стойкости, сопротивлению износу, устойчивости к ударным нагрузкам и истиранию, а также устойчивости к термическим нагрузкам.
+          p Идеальное решение для пищевых производств и других предприятий с тяжёлыми и сверхтяжелыми режимами эксплуатации пола.
+          .columns
+            .columns__col-xs-12.columns__col-md-6
+              ul.marked-list
+                li Противоскользящее покрытие;
+                li Отличная химическая стойкость;
+                li Исключительное сопротивление истиранию и ударным нагрузкам;
+                li Устойчивость при температурах от -30ºC до 120ºC;
+            .columns__col-xs-12.columns__col-md-6
+              ul.marked-list
+                li Материал не подвержен загрязнению;
+                li Легко очищается горячей водой/паром;
+                li Дополнительная биоцидная добавка;
+                li Превосходная адгезия к поверхности основания.
+        
+        +section-head(
+          'Базовый цветовой диапазон',
+          'Обыграть цену через человечность. Снизить порог цены через сравнение'
+        )
+        .product-color
+          .columns
+            .columns__col-xs-4.columns__col-md-3
+              .product-color__item
+                .product-color__example(style="background-color: #EACC8E")
+                .product-color__name Бежевый
+                .product-color__code #EACC8E
+            .columns__col-xs-4.columns__col-md-3
+              .product-color__item
+                .product-color__example(style="background-color: #E3AD31")
+                .product-color__name Жёлтый
+                .product-color__code #E3AD31
+            .columns__col-xs-4.columns__col-md-3
+              .product-color__item
+                .product-color__example(style="background-color: #983F2F")
+                .product-color__name Красный
+                .product-color__code #983F2F
+            .columns__col-xs-4.columns__col-md-3
+              .product-color__item
+                .product-color__example(style="background-color: #533831")
+                .product-color__name Коричневый
+                .product-color__code #533831
+            .columns__col-xs-4.columns__col-md-3
+              .product-color__item
+                .product-color__example(style="background-color: #999DA0")
+                .product-color__name Светло-серый
+                .product-color__code #999DA0
+            .columns__col-xs-4.columns__col-md-3
+              .product-color__item
+                .product-color__example(style="background-color: #6B7171")
+                .product-color__name Серый
+                .product-color__code #6B7171
+            .columns__col-xs-4.columns__col-md-3
+              .product-color__item
+                .product-color__example(style="background-color: #5C8C66")
+                .product-color__name Зелёный
+                .product-color__code #5C8C66
+            .columns__col-xs-4.columns__col-md-3
+              .product-color__item
+                .product-color__example(style="background-color: #0174AD")
+                .product-color__name Синий
+                .product-color__code #0174AD
+        
+        +section-head(
+          'Информация о системе RESALUX TG',
+          'Покрытие для тяжелых и сверхтяжелых режимов эксплуатации'
+        )
+        .align-center
+          a(href="javascript:void(0)") Скачать буклет с описанием
+        .columns.columns--centered
+          .columns__col-xs-12.columns__col-md-3
+            .media-box
+              .js-open-modal.media-box__overlay.media-box__overlay--video(data-url-video="https://placehold.co/900x600")
+                img(src="img/photo_1.jpg", alt="")
+          .columns__col-xs-12.columns__col-md-3
+            .media-box
+              .js-open-modal.media-box__overlay.media-box__overlay--video(data-url-video="https://placehold.co/900x600")
+                img(src="img/photo_1.jpg", alt="")
+
+    +call-to-action(
+      'Получите индивидуальные условия работы с нами',
+      'Скидки до 50% прямо сейчас',
+      'Заказать обратный звонок'
+    )

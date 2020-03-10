@@ -1,0 +1,31 @@
+mixin headerIndex(prop)
+  if prop
+    header.header.header--index
+      include header
+  else
+    header.header
+      include header
+
+mixin svg-icon(svg_id, svg_width, svg_height, svg_class)
+  svg.icon-svg(class=svg_class, aria-hidden='true', width=svg_width, height=svg_height)
+    use(xlink:href='img/sprite.svg#' + svg_id)
+
+mixin svg-logo(svg_id, svg_width, svg_height, svg_class, use_class)
+  svg(class=svg_class, aria-hidden='true', width=svg_width, height=svg_height, fill="currentColor")
+    use(class=use_class, xlink:href='img/sprite.svg#' + svg_id)
+
+mixin section-head(title, subtitle)
+  .section__head
+    h2.section__title.section__title--divider !{title}
+    p.section__subtitle !{subtitle}
+
+mixin call-to-action(title, subtitle, button_text)
+  section.section.section--bg-white
+    .container
+      +section-head(
+        title,
+        subtitle
+      )
+      .align-center
+        button(data-modal-id="#modal-form").js-open-modal.btn.btn--red= button_text
+
