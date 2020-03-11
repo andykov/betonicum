@@ -8,7 +8,7 @@ const autoprefixer = require('gulp-autoprefixer')
 const gulpStylelint = require('gulp-stylelint')
 
 module.exports = function styles() {
-  return gulp.src('src/styles/*.scss')
+  return gulp.src(['src/styles/*.scss'])
     .pipe(plumber())
     .pipe(gulpStylelint({
       failAfterError: false,

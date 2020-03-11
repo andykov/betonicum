@@ -1,22 +1,45 @@
 .container
-  .header__inner
-    a.logo(href="/")
-      //- img(src="img/logo.svg", alt="Betonicum")
-      +svg-logo('logo', '223', '26')
-    .js-sidebar-scroll.header__panel
-      .header__nav
-        nav.nav
-          ul.nav__list
-            li.nav__item
-              a(href="about.html") О компании
-            li.nav__item
-              a(href="products.html") Продукция
-            li.nav__item
-              a(href="partners.html") Партнерам
-      .header__phone
-        a(href="tel:+74957250033")
-          //- +svg-icon('phone', '18', '18')
-          span +7 495 725 00 33
-    .js-hamburger.hamburger.hamburger--squeeze
-      .hamburger-box
-        .hamburger-inner
+  //- .header__inner
+  //-   a.logo(href="/")
+  //-     //- img(src="img/logo.svg", alt="Betonicum")
+  //-     +svg-logo('logo', '223', '26')
+  //-   .js-sidebar-scroll.header__panel.header__panel--mobile
+  //-     .header__nav
+  //-       nav.nav
+  //-         ul.nav__list
+  //-           li.nav__item
+  //-             a(href="about.html") О компании
+  //-           li.nav__item
+  //-             a(href="products.html") Продукция
+  //-           li.nav__item
+  //-             a(href="partners.html") Партнерам
+  //-     .header__phone
+  //-       a(href="tel:+74957250033")
+  //-         //- +svg-icon('phone', '18', '18')
+  //-         span +7 495 725 00 33
+  //-   .js-hamburger.hamburger.hamburger--squeeze
+  //-     .hamburger-box
+  //-       .hamburger-inner
+  .js-nav-backdoor.modal-backdoor
+  .js-panel-scroll.header__panel.header__panel--mobile
+    .header__logo
+      a.logo(href="/")
+        //- img(src="img/logo.svg", alt="Betonicum")
+        +svg-logo('logo', '223', '26')
+    .header__nav
+      nav.nav
+        ul.nav__list
+          li.nav__item
+            a(href="about.html") О компании
+          li.nav__item
+            a(href="products.html") Продукция
+          li.nav__item
+            a(href="partners.html") Партнерам
+    .header__phone
+      a(href="tel:+74957250033")
+        //- +svg-icon('phone', '18', '18')
+        span +7 495 725 00 33
+  button.js-panel-mobile-trigger.panel-mobile-trigger mobile
+    //- .js-hamburger.hamburger.hamburger--squeeze
+    //-   .hamburger-box
+    //-     .hamburger-inner

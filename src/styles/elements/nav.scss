@@ -112,32 +112,33 @@
         list-style: none;
         margin: 0;
         padding: 0;
+
+        @media (max-width: $screen-md - 1) {
+            padding-top: 38px;
+        }
+        @media (min-width: $screen-md) {
+            font-weight: $font-bold;
+        }
     }
 
     &__item {
         padding: 0px 15px;
+
+        @media (max-width: $screen-md - 1) {
+            margin-bottom: 19px;
+        }
         
         a {
             font-size: 16px;
-            font-weight: $font-bold;
+            font-weight: $font-medium;
             line-height: (19 / 16);
             color: #212121;
             text-decoration: none;
+
+            @media (min-width: $screen-md) {
+                font-weight: $font-bold;
+            }
         }
-    }
-
-    
-
-    @media (max-width: $screen-md - 1) {
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 200px;
-        height: 100%;
-        overflow-y: scroll;
-        overflow-x: hidden;
-        -webkit-overflow-scrolling: touch;
-        padding: 16px;
     }
 }
 
