@@ -36,7 +36,6 @@ module.exports = function script() {
       jquery: 'jQuery'
     }
   }))
-  .pipe(gulp.dest('./public/'))
   .pipe(uglify())
   .pipe(rename({ suffix: '.min' }))
   .pipe(gulp.dest('build/js'));
