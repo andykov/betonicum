@@ -11,6 +11,10 @@ Thumbs.db
 *.log*
 node_modules/
 reports/
+gulp/
 
 # Папка с собранными файлами проекта
 # build/
+
+# Папка с исходными файлами проекта
+src/

@@ -1,18 +1,18 @@
 // Mobile first
-$mediaWidthMobile: 320px;
-$mediaWidthTablet: 768px;
-$mediaWidthTabletHorizontal: 1024px;
-$mediaWidthLaptop: 1366px;
+// $mediaWidthMobile: 320px;
+// $mediaWidthTablet: 768px;
+// $mediaWidthTabletHorizontal: 1024px;
+// $mediaWidthLaptop: 1366px;
 
 // Цвета
 $white: white;
-$red: #C62828;
+$red: #c62828;
 $gray: #616161;
 $dark-blue: #283544;
 
 $text-color: #212121;
 $text-gray: $gray;
-$body-bg: #FAFAFA;
+$body-bg: #fafafa;
 
 $link-color: $text-color;
 $link-color--hover: darken($text-color, 15%);
@@ -38,8 +38,8 @@ $line-height: (24 / 16);
 
 $typo-margin-vertical: 1em;
 
-$font-family: /*-apple-system, BlinkMacSystemFont,*/ 'Roboto', 'Ubuntu', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-$font-family--monospace: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+$font-family: /*-apple-system, BlinkMacSystemFont,*/ "Roboto", "Ubuntu", "Droid Sans", "Helvetica Neue", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family--monospace: sfmono-Regular, menlo, monaco, consolas, liberation mono, courier new, monospace;
 
 $font-thin: 100 !default;
 $font-light: 300 !default;
@@ -69,5 +69,3 @@ $container-xl: ($screen-xl + $grid-gutter-width) !default;
 $opacity: 0.7;
 $border-radius: 2px;
 $transition-time: 0.3s;
-
-

@@ -99,11 +99,10 @@ block content
           'Устройство полиуретан-цементного пола',
           'Рассчитайте примерную стоимость решения прямо сейчас'
         )
-        
         include common/media
-        .align-center
-          | Мы производим полиуретан-цементные полы Resalux.
-          a.btn.btn--sm.btn--outline(href="video.html") Все видео
+        .section__footer
+          .is-center
+            a.btn.btn--sm.btn--outline(href="video.html") Все видео
 
     section.section
       .container
@@ -115,20 +114,21 @@ block content
           .columns__col.columns__col-sm-4
             h3 Подготовка основания
             p Правильная подготовка поверхности — это самый важный этап укладки наливных полов.
-            a.btn(href="#") Подробнее
+            a.btn.btn--outline(href="#") Подробнее
           .columns__col.columns__col-sm-4
             h3 Требования к основанию
             p Качество бетонного основания – одно из основных условий долговечности уложенного на него полимерного покрытия.
-            a.btn(href="#") Подробнее
+            a.btn.btn--outline(href="#") Подробнее
           .columns__col.columns__col-sm-4
             h3 Уход за полимерным полом
             p Выбор способа ухода за полимерными полами зависит от типа уложенного покрытия и нагрузок, которым подвергается это покрытие.
-            a.btn(href="#") Подробнее
+            a.btn.btn--outline(href="#") Подробнее
         
         +section-head(
           'FAQ',
           'Ваши вопросы, наши ответы'
         )
+        +faq()
 
     +call-to-action(
       'Получите индивидуальные условия работы с нами',

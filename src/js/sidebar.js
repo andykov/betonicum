@@ -1,45 +1,43 @@
-import scrollLock from 'scroll-lock';
+"use strict";
 
-var eachNode = function(nodeList, callback) {
-    if (nodeList && callback) {
-        for (let i = 0; i < nodeList.length; i++) {
-            if (callback(nodeList[i], i, nodeList.length) === true) {
-                break;
-            }
-        }
+var scrollLock = require('scroll-lock');
+
+var eachNode = function eachNode(nodeList, callback) {
+  if (nodeList && callback) {
+    for (var i = 0; i < nodeList.length; i++) {
+      if (callback(nodeList[i], i, nodeList.length) === true) {
+        break;
+      }
     }
+  }
 };
 
-var $modal = document.querySelector('.js-panel-scroll');
-var $modalScroll = document.querySelector('.js-panel-scroll');
-var $modalBackdoor = document.querySelector('.js-nav-backdoor');
-var $openModalButtons = document.querySelectorAll('.js-panel-mobile-trigger');
-var $closeModalButtons = document.querySelectorAll('.js-close-modal');
+var $mobileNav = document.querySelector(".js-panel-scroll");
 
-var $sidebarScroll = document.querySelector('.js-panel-scroll');
+var $modalBackdoor = document.querySelector(".js-nav-backdoor");
+var $openModalButtons = document.querySelectorAll(".js-mobile-nav-trigger");
+var $closeModalButtons = document.querySelectorAll(".js-close-mobile-nav");
+var $sidebarScroll = document.querySelector(".js-panel-scroll");
+
 scrollLock.addLockableTarget($sidebarScroll);
 
-var $navbarFillGap = document.querySelectorAll('.js-navbar-fill-gap');
-scrollLock.addFillGapTarget($navbarFillGap);
-
-
-
 function openModal() {
-    $modalBackdoor.style.display = 'block';
-    $modal.style.display = 'block';
-    scrollLock.disablePageScroll($modalScroll);
+  $modalBackdoor.style.display = "block";
+  $mobileNav.style.display = "flex";
+
+  scrollLock.default.disablePageScroll($mobileNav);
 }
 
 function closeModal() {
-    $modalBackdoor.style.display = '';
-    $modal.style.display = '';
-    scrollLock.enablePageScroll($modalScroll);
+  $modalBackdoor.style.display = "";
+  $mobileNav.style.display = "";
+
+  scrollLock.default.enablePageScroll($mobileNav);
 }
 
-eachNode($openModalButtons, function($el) {
-    $el.addEventListener('click', openModal);
+eachNode($openModalButtons, function ($el) {
+  $el.addEventListener("click", openModal);
 });
-
-eachNode($closeModalButtons, function($el) {
-    $el.addEventListener('click', closeModal);
+eachNode($closeModalButtons, function ($el) {
+  $el.addEventListener("click", closeModal);
 });

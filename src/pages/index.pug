@@ -9,32 +9,14 @@ block header
         .container
           h1.hero__title Полиуретан-цементные полы
           .hero__subtitle получите готовый пол за 1 день #[br] из надежных и долговечных материалов #[br] гарантия 10 лет
-          button.btn.btn--red Рассчитать пол
+          button.btn.btn--transp Рассчитать пол
 
 block content
   main.main
     
     section.section
       .container
-        
-        .block-floating
-          .block-floating__inner
-            .columns.columns--gapless-xs
-              .columns__col-xs-4
-                .icon-box.icon-box--special.icon-box--centered
-                  .icon-box__img
-                    +svg-icon('advantages_5', '64', '64')
-                  .icon-box__title Пол за 1 день
-              .columns__col-xs-4
-                .icon-box.icon-box--special.icon-box--centered
-                  .icon-box__img
-                    +svg-icon('advantages_6', '64', '64')
-                  .icon-box__title 20 лет на рынке
-              .columns__col-xs-4
-                .icon-box.icon-box--special.icon-box--centered
-                  .icon-box__img
-                    +svg-icon('advantages_7', '64', '64')
-                  .icon-box__title 600 тонн в месяц
+        include includes/index/block-floating
       
       +section-head(
         'Почему «БЕТОНИКУМ»',
@@ -45,19 +27,16 @@ block content
 
     section.section.section--bg-white
       .container
-        .video-init
-        //-   .js-video-insert
-        button.js-video-init videoInit
-        //- .js-video-insert
         +section-head(
           'Как работают с RESALUX',
           'Просто. Быстро. Надёжно.'
         )
 
         include common/media
-        .align-center
-          | Мы производим полиуретан-цементные полы Resalux.
-          a(href="#") Подробнее...
+        .section__footer
+          .is-center
+            | Мы производим полиуретан-цементные полы Resalux. 
+            a(href="#") Подробнее...
 
     section.section
       .container
@@ -65,6 +44,7 @@ block content
           'Выполненные объекты',
           'C 2001 опыт работы с полиуретан-цементными материалами'
         )
+        include includes/index/projects
 
     section.section.section--bg-white
       .container
@@ -73,49 +53,49 @@ block content
           'В своей работе мы используем только импортное сырьё'
         )
 
-        .columns.advantages
-          .columns__col-md-4
-            .icon-box
+        .columns.icon-box-wrap
+          .columns__col-xs-12.columns__col-md-4
+            .icon-box.icon-box--mobile-marked
               .icon-box__img
                 +svg-icon('icon_1', '48', '43')
               .icon-box__title Срок службы более ХХ лет
-          .columns__col-md-4
-            .icon-box
+          .columns__col-xs-12.columns__col-md-4
+            .icon-box.icon-box--mobile-marked
               .icon-box__img
                 +svg-icon('icon_2', '48', '48')
               .icon-box__title Устойчив к резким перепадам температур
-          .columns__col-md-4
-            .icon-box
+          .columns__col-xs-12.columns__col-md-4
+            .icon-box.icon-box--mobile-marked
               .icon-box__img
                 +svg-icon('icon_3', '48', '48')
               .icon-box__title Соответствие санитарно-гигиеническим нормам
-          .columns__col-md-4
-            .icon-box
+          .columns__col-xs-12.columns__col-md-4
+            .icon-box.icon-box--mobile-marked
               .icon-box__img
                 +svg-icon('icon_4', '48', '48')
               .icon-box__title Устойчив к химическому воздействию
-          .columns__col-md-4
-            .icon-box
+          .columns__col-xs-12.columns__col-md-4
+            .icon-box.icon-box--mobile-marked
               .icon-box__img
                 +svg-icon('icon_5', '48', '48')
               .icon-box__title Устойчив к ударным нагрузкам
-          .columns__col-md-4
-            .icon-box
+          .columns__col-xs-12.columns__col-md-4
+            .icon-box.icon-box--mobile-marked
               .icon-box__img
                 +svg-icon('icon_6', '35', '48')
               .icon-box__title Высокая адгезия к основанию
-          .columns__col-md-4
-            .icon-box
+          .columns__col-xs-12.columns__col-md-4
+            .icon-box.icon-box--mobile-marked
               .icon-box__img
                 +svg-icon('icon_7', '44', '48')
               .icon-box__title Безвреден для человека и животных
-          .columns__col-md-4
-            .icon-box
+          .columns__col-xs-12.columns__col-md-4
+            .icon-box.icon-box--mobile-marked
               .icon-box__img
                 +svg-icon('icon_8', '48', '48')
               .icon-box__title Не накапливает статическое электричество
-          .columns__col-md-4
-            .icon-box
+          .columns__col-xs-12.columns__col-md-4
+            .icon-box.icon-box--mobile-marked
               .icon-box__img
                 +svg-icon('icon_9', '48', '48')
               .icon-box__title Обеспечивает гидроизоляционные свойства
@@ -126,9 +106,10 @@ block content
           'Благодарности наших клиентов',
           'Нас рекомендуют ведущие эксперты'
         )
+        include includes/index/reviews
 
     +call-to-action(
-      '22333Начните решение задачи с консультации эксперта',
+      'Начните решение задачи с консультации эксперта',
       'Рассчитайте примерную стоимость решения прямо сейчас',
       'Рассчитать стоимость'
     )
@@ -139,6 +120,10 @@ block content
           'FAQ',
           'Ваши вопросы, наши ответы'
         )
+        +faq()
+        .section__footer
+          .is-center Остались вопросы? Наши менеджеры с радостью вам помогут! Звоните +7 495 725 00 33 
+          
     section.section.section--bg-white
       .container
         +section-head(

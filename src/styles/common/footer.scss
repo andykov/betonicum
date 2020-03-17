@@ -1,19 +1,36 @@
 .footer {
     background-color: $dark-blue;
-    padding-top: 72px;
-    color: #FFF;
+    padding-top: 40px;
+    color: #E0E0E0;
 
-    a {
-        color: #FFF;
+    @media (min-width: $screen-md) {
+        padding-top: 72px;
     }
 
-    ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
+    a {
+        color: #E0E0E0;
+    }
+
+    &__panel {
+        padding-bottom: 22px;
+    }
+
+    &__action {
+        @media (max-width: $screen-md - 1) {
+            text-align: center;
+        }
     }
 
     &__nav {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+            margin-bottom: 38px;
+            line-height: 1;
+        }
+
         a {
             text-transform: uppercase;
             text-decoration: none;
@@ -22,13 +39,94 @@
         }
     }
 
+    &__contacts {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: $font-size-sm;
+
+        @media (max-width: $screen-md - 1) {
+            padding: 40px 10px 0;
+        }
+        
+
+        li {
+            margin-bottom: 20px;
+            line-height: 1;
+
+            @media (min-width: $screen-md) {
+                margin-bottom: 38px;
+            }
+
+            &::before {
+                content: '';
+                display: inline-block;
+                vertical-align: middle;
+                background-repeat: no-repeat;
+                margin-right: 20px;
+            }
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        &-phone {
+            &::before {
+                background-image: url('../img/phone.svg');
+                width: 18px;
+                height: 18px;
+            }
+
+            a {
+                &:not(:first-child) {
+                    margin-left: 20px;
+                }
+            }
+        }
+
+        &-email {
+            &::before {
+                background-image: url('../img/email.svg');
+                width: 20px;
+                height: 16px;
+            }
+        }
+
+        &-address {
+            &::before {
+                background-image: url('../img/address.svg');
+                width: 18px;
+                height: 18px;
+            }
+        }
+    }
+
+    &__social {
+        font-size: 14px;
+        text-align: center;
+
+        @media (max-width: $screen-md - 1) {
+            text-align: center;
+            padding-top: 17px;
+        }
+
+        .social-icon {
+            padding-top: 13px;
+        }
+    }
+
     &__copyright {
         border-top: 1px solid rgba(255, 255, 255, 0.12);
-        padding: 29px 0;
+        padding: 18px 0 17px;
         font-size: 12px;
         line-height: (14 / 12);
         text-align: center;
         color: #FFF;
         opacity: 0.5;
+
+        @media (min-width: $screen-md) {
+            padding: 29px 0;
+        }
     }
 }

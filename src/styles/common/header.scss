@@ -1,29 +1,16 @@
 .header {
 
-    &--index {
-        @media (min-width: $screen-md) {
-            .logo {
-                svg {
-                    use {
-                        color: #FFF;
-                    }
-                }
-            }
-        }
-        
-    }
-
     &:not(&--index) {
         background-color: #FFF;
     }
 
     &__inner {
-        
+        display: flex;
     }
 
-    @include media-tablet {
-        // width: 500px;
-    }
+    // @include media-tablet {
+    //     // width: 500px;
+    // }
 
     &__panel {
         display: flex;
@@ -31,12 +18,18 @@
         align-items: center;
         justify-content: space-between;
         height: 174px;
+        width: 100%;
+
+        .modal-close {
+            display: none;
+        }
 
         &--mobile {
-            
 
             @media (max-width: $screen-md - 1) {
                 display: none;
+                flex-direction: column;
+                align-items: stretch;
                 position: fixed;
                 left: 0;
                 top: 0;
@@ -48,6 +41,10 @@
                 -webkit-overflow-scrolling: touch;
                 // padding: 16px 37px;
                 background-color: #FFF;
+
+                .modal-close {
+                    display: block;
+                }
             }
 
             // #7C4345
@@ -57,6 +54,8 @@
     &__logo {
         @media (max-width: $screen-md - 1) {
             padding: 15px 0 15px 18px;
+            border-bottom: 1px solid #EDF0F7;
+            
 
             .logo {
                 svg {
@@ -69,29 +68,77 @@
 
     &__nav {
         @media (max-width: $screen-md - 1) {
-            border-top: 1px solid #EDF0F7;
             padding-left: 22px;
             padding-right: 22px;
+            margin-bottom: auto;
         }
     }
 
     &__phone {
-        // margin-left: auto;
-        font-size: 26px;
         font-weight: $font-bold;
-        line-height: 30px;
+        font-size: 16px;
+        line-height: (19 / 16);
         color: #616161;
+
+        @media (max-width: $screen-md - 1) {
+            border-top: 1px solid #EDF0F7;
+            padding: 18px 0;
+            margin-top: auto;
+            text-align: center;
+        }
+
+        @media (min-width: $screen-md) {
+            font-size: 26px;
+            line-height: 30px;
+        }
+    }
+
+    &--index {
+        .mobile-nav-trigger {
+            svg {
+                use {
+                    color: #FFF;
+                }
+            }
+        }
+        
+        @media (min-width: $screen-md) {
+            .logo {
+                svg {
+                    use {
+                        color: #FFF;
+                    }
+                }
+            }
+
+            .nav a {
+                color: #FFF;
+            }
+        }
+        
     }
 }
 
-.panel-mobile-trigger {
-    height: 40px;
+.mobile-nav-trigger {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    width: 58px;
+    height: 58px;
+    margin-left: auto;
+
     @media (max-width: $screen-md - 1) {
-        position: fixed;
-        right: 0;
-        top: 0;
+        // position: fixed;
+        // right: 0;
+        // top: 0;
     }
+
     @media (min-width: $screen-md) {
         display: none;
+    }
+
+    &:focus,
+    &:active {
+        outline: none;
     }
 }

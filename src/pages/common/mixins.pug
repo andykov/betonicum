@@ -6,13 +6,17 @@ mixin headerIndex(prop)
     header.header
       include header
 
-mixin svg-icon(svg_id, svg_width, svg_height, svg_class)
-  svg.icon-svg(class=svg_class, aria-hidden='true', width=svg_width, height=svg_height)
-    use(xlink:href='img/sprite.svg#' + svg_id)
+//- mixin svg-icon(svg_id, svg_width, svg_height, svg_class)
+//-   svg.icon-svg(class=svg_class, aria-hidden='true', width=svg_width, height=svg_height)
+//-     use(xlink:href='img/sprite.svg#' + svg_id)
 
-mixin svg-logo(svg_id, svg_width, svg_height, svg_class, use_class)
-  svg(class=svg_class, aria-hidden='true', width=svg_width, height=svg_height, fill="currentColor")
-    use(class=use_class, xlink:href='img/sprite.svg#' + svg_id)
+mixin svg-icon(svg_id, svg_width, svg_height, svg_class, fill, use_class)
+  if (fill)
+    svg.icon-svg(class=svg_class, aria-hidden='true', width=svg_width, height=svg_height, fill=fill)
+      use(class=use_class, xlink:href='img/sprite.svg#' + svg_id)
+  else
+    svg.icon-svg(class=svg_class, aria-hidden='true', width=svg_width, height=svg_height)
+      use(class=use_class, xlink:href='img/sprite.svg#' + svg_id)
 
 mixin section-head(title, subtitle)
   .section__head
@@ -26,6 +30,20 @@ mixin call-to-action(title, subtitle, button_text)
         title,
         subtitle
       )
-      .align-center
+      .is-center
         button(data-modal-id="#modal-form").js-open-modal.btn.btn--red= button_text
 
+mixin faq()
+  .faq
+    .faq__item
+      button.js-faq-toggle.faq__toggle Себестоимость материалов в среднем на 50% ниже, чем у европейских аналогов
+      .faq__text(data-faq-body) Lorem ipsum dolor sit amet.
+    .faq__item
+      button.js-faq-toggle.faq__toggle А есть ли у вас скидки?
+      .faq__text(data-faq-body) Получайте дополнительные скидки, как постоянный партнер. От других производителей нас отличает тот факт, что будучи в течение пятнадцати лет подрядной организацией и обладая колоссальным практическим опытом, мы лучше остальных знаем какой результат ожидают наши клиенты и какие нюансы существуют на практике при укладке и дальнейшей эксплуатации покрытий.
+    .faq__item
+      button.js-faq-toggle.faq__toggle Какая ваша деятельность? Что вы делаете?
+      .faq__text(data-faq-body) Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, corporis!
+    .faq__item
+      button.js-faq-toggle.faq__toggle За какое время вы сделаете отличный пол?
+      .faq__text(data-faq-body) Lorem ipsum dolor sit amet consectetur adipisicing elit. Id placeat eaque dignissimos enim sapiente blanditiis reprehenderit suscipit quasi, cum optio, cumque explicabo tempora. Laudantium incidunt eius fuga? Sit, beatae dolorem!

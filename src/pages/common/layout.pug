@@ -8,6 +8,7 @@ html(lang="ru")
       meta(content="width=device-width, initial-scale=1" name="viewport")
       meta(content="ie=edge" http-equiv="x-ua-compatible")
       link(rel="stylesheet" href="css/libs/plyr.css")
+      link(rel="stylesheet" href="css/libs/slick.css")
       link(rel="stylesheet" href="css/style.css")
     body
       |<!-- load combined svg file (with symbols) into body-->
@@ -40,14 +41,14 @@ html(lang="ru")
             .modal__content
               .js-media-image.media-image
                 img(src="/", alt="")
-            button.js-close-modal.modal__close Close modal
+            button.js-close-modal.modal-close Close modal
 
         #modal-video.js-modal.js-modal-scroll.modal.modal--video
           .modal__container
             .modal__content
               .js-media-video.media-video
               //- (data-plyr-provider="youtube" data-plyr-embed-id="bTqVqk7FSmY")
-            button.js-close-modal.modal__close Close modal
+            button.js-close-modal.modal-close Close modal
 
         #modal-form.js-modal.js-modal-scroll.modal.modal--form
           .modal__container
@@ -62,11 +63,12 @@ html(lang="ru")
                     input(type="tel", name="user_phone" placeholder="Телефон")
                   .form__button
                     button(type="submit") Заказать обратный звонок
-            button.js-close-modal.modal__close Close modal
+            button.js-close-modal.modal-close Close modal
       block scripts
         // Scripts
         //- script(src="js/libs/scroll-lock.min.js")
         //- script(src='js/main.min.js')
         script(src="http://code.jquery.com/jquery-3.3.1.min.js")
         script(src="js/libs/plyr.min.js")
+        script(src="js/libs/slick.min.js")
         script(src='js/bundle.min.js')
