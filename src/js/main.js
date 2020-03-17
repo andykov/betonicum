@@ -115,4 +115,30 @@ $(document).ready(() => {
     ]
   });
 
+  // Slider Video list
+  $('.js-video-list').each(function(){
+    if ($(this).children().length > 1) {
+      $(this).slick({
+        dots: false,
+        arrows: false,
+        infinite: false,
+        speed: 250,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: '40px',
+        mobileFirst: true,
+        responsive: [
+          {
+            breakpoint: 767,
+            settings: 'unslick'
+          }
+        ]
+      });
+    } else {
+      $(this).children().addClass('video-row__item--full');
+    }
+  });
+  
+
 });

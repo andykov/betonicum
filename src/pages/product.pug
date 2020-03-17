@@ -84,17 +84,18 @@ block content
           'Информация о системе RESALUX TG',
           'Покрытие для тяжелых и сверхтяжелых режимов эксплуатации'
         )
-        .is-center
-          a(href="javascript:void(0)") Скачать буклет с описанием
-        .columns.columns--centered
-          .columns__col-xs-12.columns__col-md-3
-            .media-box
-              .js-open-modal.media-box__overlay.media-box__overlay--video(data-url-video="https://placehold.co/900x600")
-                img(src="img/photo_1.jpg", alt="")
-          .columns__col-xs-12.columns__col-md-3
-            .media-box
-              .js-open-modal.media-box__overlay.media-box__overlay--video(data-url-video="https://placehold.co/900x600")
-                img(src="img/photo_1.jpg", alt="")
+        .is-center.pb-40
+          a.link-pdf(href="javascript:void(0)") Скачать буклет с описанием
+        .product-video
+          .columns.columns--centered
+            .columns__col-xs-12.columns__col-md-3
+              .media-box
+                .js-open-modal.media-box__overlay.media-box__overlay--video(data-url-video="https://placehold.co/900x600")
+                  img(src="img/photo_1.jpg", alt="")
+            .columns__col-xs-12.columns__col-md-3
+              .media-box
+                .js-open-modal.media-box__overlay.media-box__overlay--video(data-url-video="https://placehold.co/900x600")
+                  img(src="img/photo_1.jpg", alt="")
 
     +call-to-action(
       'Получите индивидуальные условия работы с нами',

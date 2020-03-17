@@ -24,7 +24,7 @@ function openModal(id, url) {
   var videoId = url; 
   var $modalContainer = document.querySelector(id + ' .modal__container');
   var $modalContent = document.querySelector(id + ' .modal__content');
-
+  
   // Modal Video
   if ($modalId && id === "#modal-video") {
     if (player === null) {
@@ -47,6 +47,7 @@ function openModal(id, url) {
           rel: 0
         }
       });
+
     } else {
       player.source = {
         type: "video",
@@ -56,6 +57,8 @@ function openModal(id, url) {
         }]
       };
     }
+    
+    
   }
   
   // Modal Image
@@ -69,7 +72,7 @@ function openModal(id, url) {
   $modalId.style.display = "block";
   $modalBackdoor.style.display = "block";
   scrollLock.disablePageScroll($modalId);
-  $modalContainer.style.maxWidth = $modalContent.clientWidth + 'px';
+  // $modalContainer.style.maxWidth = $modalContent.clientWidth + 'px';
 }
 
 function closeModal() {

@@ -32,22 +32,18 @@ img {
 }
 
 a {
-    color: $link-color;
+    color: #C62828;
     background-color: transparent;
     transition: color 0.3s;
+    text-decoration: none;
 
     &:hover,
     &:focus {
       color: $link-color--hover;
+      text-decoration: underline;
     }
 
-    // &:visited {
-    //   color: $link-color--hover;
-    // }
-
     &[href^='tel:'] {
-
-        // На больших экранах телефоны-ссылки делаем обычным текстом
         @media (min-width: $screen-xl) {
             white-space: nowrap;
             pointer-events: none;
@@ -375,8 +371,24 @@ svg {
     }
 }
 
+.link-pdf {
+    &::before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        background: url('../img/icon-pdf.svg') no-repeat;
+        width: 20px;
+        height: 20px;
+        margin-right: 12px;
+    }
+}
+
 .pb-0 {
     padding-bottom: 0;
+}
+
+.pb-40 {
+    padding-bottom: 40px;
 }
 
 .is-space-evenly {
@@ -414,84 +426,7 @@ svg {
 }
 
 
-.step-work {
-    counter-reset: steps;
 
-    &__item {
-        position: relative;
-        // padding-left: 68px;
-        padding: 26px 0;
-        font-weight: $font-bold;
-        line-height: (24 / 16);
-
-        span {
-            position: relative;
-            display: block;
-            padding: 0 47px;
-            z-index: 1;
-
-            &::before {
-                position: absolute;
-                counter-increment: steps;
-                content: counter(steps);
-                top: -7px;
-                left: -17px;
-                font-size: 18px;
-                font-weight: $font-bold;
-                width: 38px;
-                height: 38px;
-                border-radius: 38px;
-                border: 4px solid #C62828;
-                background-color: #fafafa;
-                text-align: center;
-            }
-        }
-
-        &-right {
-            position: relative;
-            text-align: right;
-            padding: 0;
-            border: 4px solid #c62828;
-            border-left: 0;
-            border-top-right-radius: 19px;
-            border-bottom-right-radius: 19px;
-            margin: -4px 0 -4px 19px;
-
-            span {
-                &::before {
-                    left: auto;
-                    right: -19px;
-                }
-            }
-        }
-
-        &-left {
-            border: 4px solid #c62828;
-            border-right: 0;
-            border-top-left-radius: 19px;
-            border-bottom-left-radius: 19px;
-            margin-right: 19px;
-        }
-
-        &-left,
-        &-right {
-            &:first-of-type {
-                border-top: 0;
-                
-                .step-work__item:first-child {
-                    padding-top: 0;
-                }
-            }
-            &:last-of-type {
-                border-bottom: 0;
-
-                .step-work__item:last-child {
-                    padding-bottom: 0;
-                }
-            }
-        }
-    }
-}
 
 .form-box {
     padding: 35px 40px 40px;
@@ -650,102 +585,18 @@ svg {
         }
     }
 }
+.product-video {
+    @media (max-width: $screen-md - 1) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// .mp-responsive{
-//     width:100%;
-//     height:auto;
-//     overflow: hidden;
-//   }
-//   /*effect zoom*/
-//   .mp-carousel span{
-//     display: block;
-//     transform: translate(-80%, 0) scale(.8);
-//     transition: all .4s ease;
-//     opacity: .5;
-//   }
-//   .slick-slide.lt2 span {
-//     transform: translate(80%, 0) scale(.8);
-//   }
-//   .slick-slide.lt1 span {
-//     opacity: .7;
-//     transform: translate(80%, 0) scale(.8);
-//   }
-//   .slick-slide.gt1 span {
-//     opacity: .7;
-//     transform: translate(-80%, 0) scale(.8);
-//   }
-//   .slick-slide.gt2 span {
-//     transform: translate(-80%, 0) scale(0.8);
-//   }
-  
-//   .slick-slide.slick-center span {
-//     z-index: 1;
-//     transform: scale(1);
-//     opacity: 1;
-//     color: #e67e22;
-//   }
-//   /*FIN effect zoom*/
-  
-//   .slick-slide{
-//     overflow:hidden;
-//   }
-  
-//   .slick-slide span {
-//     &:before{
-//       content: '';
-//       width:100%;
-//       height: 100%;
-//       position: absolute;
-//       top:0;
-//       left: 0;
-//       z-index: 1;
-//     }
-//     &.no-before::before{
-//       display: none;
-//     }
-//   }
-//   .slick-active iframe{
-//     width:640px !important;
-//     height: 310px !important;
-//     margin-top:10% !important;
-  
-//   }
-//   .slick-active iframe{
-//     width:640px !important;
-//     height: 410px !important;
-//     margin-top:0 !important;
-//     z-index:999;
-  
-//   }
-//   .slick-active img{
-//     width:640px !important;
-//     height: 310px !important;
-//     margin-top:10% !important;
-//   }
-//   .slick-active img{
-//     width:640px !important;
-//     height: 410px !important;
-//     margin-top:0 !important;
-//     // z-index:999;
-//   }
-
-
+    .media-box {
+        @media (max-width: $screen-md - 1) {
+            margin-bottom: 20px;
+        }
+    }
+}
 
 
 .faq {
@@ -846,5 +697,84 @@ svg {
             padding: 12px 29px 48px;
         }
     }
+}
 
+.video-row-container {
+
+}
+
+.video-row {
+    
+    // .slick-track {
+    //     display: flex;
+    //     flex-wrap: wrap;
+    //     margin-left: -20px;
+    //     margin-right: -20px;
+    // }
+    &:not(:last-child) {
+        margin-bottom: 67px;
+    }
+
+    &__title {
+        font-weight: $font-bold;
+        margin-bottom: 33px;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+            background: url('../img/icon-video.svg') no-repeat;
+        }
+    }
+
+    &__list {
+        @include row( $grid-gutter-width-mobile + 20, $grid-gutter-width-mobile );
+    }
+
+    &__item {
+        // @include col('xs', 4, 12, 20px);
+        // @include col('md', 4);
+
+        min-width: 220px;
+        
+
+        
+        
+        display: block;
+        flex-basis: 0;
+        flex-grow: 1;
+        flex-shrink: 1;
+        
+        @media screen and (min-width: $screen-xs) {
+            padding-left: $grid-gutter-width-mobile / 2;
+            padding-right: $grid-gutter-width-mobile / 2;
+            max-width: 373 + $grid-gutter-width-mobile;
+        }
+
+        @media screen and (min-width: $screen-md) {
+            padding-left: $grid-gutter-width / 2;
+            padding-right: $grid-gutter-width / 2;
+            max-width: 373 + $grid-gutter-width;
+        }
+
+        &--full {
+            @media screen and (max-width: $screen-md - 1) {
+                @include col('xs', 12, 12, $grid-gutter-width-mobile + 80);
+                max-width: 373 + $grid-gutter-width-mobile + 80;
+            }
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__box {
+        margin-bottom: 20px;
+    }
+
+    &__name {}
 }
