@@ -355,8 +355,8 @@ svg {
 }
 
 .phone {
-    display: inline-block;
-    background: url('../img/phone.svg') no-repeat left center;
+    display: flex;
+    align-items: center;
 
     .icon-svg {
         margin-right: 27px;

@@ -94,6 +94,10 @@
     }
 
     &--index {
+        .phone {
+            color: #fff;
+        }
+        
         .mobile-nav-trigger {
             svg {
                 use {

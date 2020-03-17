@@ -17,14 +17,13 @@ html(lang="ru")
       |    var scripts = doc.getElementsByTagName("script")
       |    var script = scripts[scripts.length - 1]
       |    var xhr = new XMLHttpRequest()
-      |    console.log(xhr);
       |    xhr.onload = function () {
       |        var div = doc.createElement("div")
       |        div.innerHTML = this.responseText
       |        div.style.display = "none"
       |        script.parentNode.insertBefore(div, script)
       |    }
-      |    xhr.open("get", "/img/sprite.svg", true)
+      |    xhr.open("get", "img/sprite.svg", true)
       |    xhr.send()
       |    })(document)
       |</script>
