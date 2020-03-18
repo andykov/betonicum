@@ -1,11 +1,10 @@
 .container
   .header__inner
     .js-nav-backdoor.modal-backdoor
-    .js-panel-scroll.header__panel.header__panel--mobile
-      .header__logo
-        a.logo(href="/")
-          //- img(src="img/logo.svg", alt="Betonicum")
-          +svg-icon('logo', '223', '26', '', 'currentColor')
+    .header__logo
+      a.logo(href="/")
+        +svg-icon('logo', '223', '26', '', 'currentColor')
+    .js-panel-scroll.header__panel
       .header__nav
         nav.nav
           ul.nav__list
@@ -15,6 +14,8 @@
               a(href="products.html") Продукция
             li.nav__item
               a(href="partners.html") Партнерам
+      .header__button
+        button.js-open-modal.btn.btn--xs.btn--outline(data-modal-id="#modal-form") Заказать обратный звонок
       .header__phone
         a.phone(href="tel:+74957250033")
           +svg-icon('phone', '18', '18')
@@ -22,6 +23,26 @@
       button.js-close-mobile-nav.modal-close
     button.js-mobile-nav-trigger.mobile-nav-trigger
       +svg-icon('menu', '18', '12')
-      //- .js-hamburger.hamburger.hamburger--squeeze
-      //-   .hamburger-box
-      //-     .hamburger-inner
+    //- .js-panel-scroll.header__panel.header__panel--mobile
+    //-   .header__logo
+    //-     a.logo(href="/")
+    //-       +svg-icon('logo', '223', '26', '', 'currentColor')
+    //-   .header__nav
+    //-     nav.nav
+    //-       ul.nav__list
+    //-         li.nav__item
+    //-           a(href="about.html") О компании
+    //-         li.nav__item
+    //-           a(href="products.html") Продукция
+    //-         li.nav__item
+    //-           a(href="partners.html") Партнерам
+    //-   .header__phone
+    //-     a.phone(href="tel:+74957250033")
+    //-       +svg-icon('phone', '18', '18')
+    //-       span +7 495 725 00 33
+    //-   button.js-close-mobile-nav.modal-close
+    //- .header__mobile-panel
+    //-   a.logo(href="/")
+    //-         +svg-icon('logo', '223', '26', '', 'currentColor')
+    //-   button.js-mobile-nav-trigger.mobile-nav-trigger
+    //-     +svg-icon('menu', '18', '12')

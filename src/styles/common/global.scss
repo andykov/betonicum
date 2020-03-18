@@ -120,6 +120,21 @@ textarea {
     resize: vertical;
 }
 
+::-webkit-input-placeholder {
+    font-size: 16px;
+    color: #666666;
+}
+  
+:-ms-input-placeholder {
+    font-size: 16px;
+    color: #666666;
+}
+  
+::placeholder {
+    font-size: 16px;
+    color: #666666;
+}
+
 svg {
     fill: currentColor;
 
@@ -343,6 +358,8 @@ svg {
 }
 
 .logo {
+    display: inline-block;
+
     svg {
         use {
             color: #7C4345;
@@ -355,7 +372,7 @@ svg {
     align-items: center;
 
     .icon-svg {
-        margin-right: 27px;
+        margin-right: 17px;
     }
 }
 
@@ -433,6 +450,10 @@ svg {
     background: #FFFFFF;
     box-shadow: 0px 14px 42px rgba(45, 48, 58, 0.12);
     border-radius: 7px;
+
+    &__text {
+        margin-bottom: 30px;
+    }
 }
 
 .check-list {

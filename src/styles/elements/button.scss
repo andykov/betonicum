@@ -48,6 +48,12 @@
     color: #FFF;
   }
 
+  &--xs {
+    font-size: 11px;
+    line-height: (13 / 11);
+    padding: 7px 12px 6px;
+  }
+
   &--sm {
     font-size: $font-size-sm;
     line-height: (16 / 14);

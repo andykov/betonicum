@@ -1,75 +1,98 @@
 .header {
 
+    @media (max-width: $screen-md - 1) {
+        .logo {
+            svg {
+                width: 155px;
+                height: 18px;
+            }
+        }
+    }
+
     &:not(&--index) {
         background-color: #FFF;
     }
 
     &__inner {
         display: flex;
+        align-items: center;
+        height: 58px;
+
+        @media (min-width: $screen-md) {
+            height: 174px;
+        }
     }
 
-    // @include media-tablet {
-    //     // width: 500px;
-    // }
+    &__mobile-panel {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
     &__panel {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        justify-content: space-between;
-        height: 174px;
+        
         width: 100%;
 
         .modal-close {
             display: none;
         }
 
-        &--mobile {
 
-            @media (max-width: $screen-md - 1) {
-                display: none;
-                flex-direction: column;
-                align-items: stretch;
-                position: fixed;
-                left: 0;
-                top: 0;
-                z-index: 1000;
-                width: 300px;
-                height: 100%;
-                overflow-y: scroll;
-                overflow-x: hidden;
-                -webkit-overflow-scrolling: touch;
-                // padding: 16px 37px;
-                background-color: #FFF;
-
-                .modal-close {
-                    display: block;
-                }
+        @media (max-width: $screen-md - 1) {
+            display: none;
+            flex-direction: column;
+            align-items: stretch;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 1000;
+            width: 300px;
+            height: 100%;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+            padding-top: 55px;
+            background-color: #FFF;
+            
+            .modal-close {
+                display: block;
             }
+        }
+    }
 
-            // #7C4345
+    &__button {
+        padding: 0 0 24px 38px;
+
+        @media (min-width: $screen-md) {
+            display: none;
+        }
+    }
+
+    &__nav,
+    &__phone {
+        
+        @media (min-width: $screen-md) {
+            margin-left: auto;
         }
     }
 
     &__logo {
-        @media (max-width: $screen-md - 1) {
-            padding: 15px 0 15px 18px;
-            border-bottom: 1px solid #EDF0F7;
-            
+        padding-bottom: 15px;
 
-            .logo {
-                svg {
-                    width: 155px;
-                    height: 18px;
-                }
-            }
+        @media (max-width: $screen-md - 1) {
+            padding-top: 10px;
         }
     }
 
     &__nav {
         @media (max-width: $screen-md - 1) {
-            padding-left: 22px;
-            padding-right: 22px;
+            border-top: 1px solid #EDF0F7;
+            padding-left: 38px;
+            padding-top: 38px;
             margin-bottom: auto;
         }
     }
@@ -82,8 +105,7 @@
 
         @media (max-width: $screen-md - 1) {
             border-top: 1px solid #EDF0F7;
-            padding: 18px 0;
-            margin-top: auto;
+            padding: 18px 0 18px 38px;
             text-align: center;
         }
 
@@ -91,13 +113,25 @@
             font-size: 26px;
             line-height: 30px;
         }
+
+        .phone {
+            color: #616161;
+        }
     }
 
     &--index {
-        .phone {
-            color: #fff;
-        }
         
+        &:not(.nav-open) {
+            .logo {
+                svg {
+                    use {
+                        color: #FFF;
+                    }
+                }
+            }
+        }
+
+    
         .mobile-nav-trigger {
             svg {
                 use {
@@ -107,12 +141,8 @@
         }
         
         @media (min-width: $screen-md) {
-            .logo {
-                svg {
-                    use {
-                        color: #FFF;
-                    }
-                }
+            .phone {
+                color: #fff;
             }
 
             .nav a {
@@ -121,24 +151,30 @@
         }
         
     }
+
+    &.nav-open {
+        .header__logo {
+            z-index: 10000;
+        }
+    }
 }
 
 .mobile-nav-trigger {
     background-color: transparent;
     border: 0;
     padding: 0;
-    width: 58px;
-    height: 58px;
+    width: 55px;
+    height: 55px;
     margin-left: auto;
-
-    @media (max-width: $screen-md - 1) {
-        // position: fixed;
-        // right: 0;
-        // top: 0;
-    }
 
     @media (min-width: $screen-md) {
         display: none;
+    }
+
+    svg {
+        use {
+            color: #7C4345;
+        }
     }
 
     &:focus,

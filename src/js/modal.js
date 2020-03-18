@@ -72,7 +72,7 @@ function openModal(id, url) {
   $modalId.style.display = "block";
   $modalBackdoor.style.display = "block";
   scrollLock.disablePageScroll($modalId);
-  // $modalContainer.style.maxWidth = $modalContent.clientWidth + 'px';
+  $modalContainer.style.maxWidth = $modalContent.clientWidth + 'px';
 }
 
 function closeModal() {

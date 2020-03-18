@@ -13,7 +13,7 @@ var eachNode = function eachNode(nodeList, callback) {
 };
 
 var $mobileNav = document.querySelector(".js-panel-scroll");
-
+var $header = document.querySelector(".header");
 var $modalBackdoor = document.querySelector(".js-nav-backdoor");
 var $openModalButtons = document.querySelectorAll(".js-mobile-nav-trigger");
 var $closeModalButtons = document.querySelectorAll(".js-close-mobile-nav");
@@ -24,15 +24,16 @@ scrollLock.addLockableTarget($sidebarScroll);
 function openModal() {
   $modalBackdoor.style.display = "block";
   $mobileNav.style.display = "flex";
-
-  scrollLock.default.disablePageScroll($mobileNav);
+  $header.classList.add("nav-open");
+  console.log($mobileNav);
+  scrollLock.disablePageScroll($mobileNav);
 }
 
 function closeModal() {
   $modalBackdoor.style.display = "";
   $mobileNav.style.display = "";
-
-  scrollLock.default.enablePageScroll($mobileNav);
+  $header.classList.remove("nav-open");
+  scrollLock.enablePageScroll($mobileNav);
 }
 
 eachNode($openModalButtons, function ($el) {
